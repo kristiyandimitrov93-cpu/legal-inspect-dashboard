@@ -12,18 +12,10 @@ export const Header = () => {
                 <Search className="search-icon" />
                 <input type="text" placeholder="Search..." />
             </div>
-
             <Plus className="header-icon" size={18} />
-
             <Settings className="header-icon" size={18} />
-
             <Bell className="header-icon" size={18} />
-
             <CircleUser className="header-icon" size={18} />
-
-
-
-
         </div>
     </header>)
 }
