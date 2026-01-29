@@ -1,46 +1,54 @@
+$bg: #ffffff;
+$border-col: #e5e7eb;
+$sidebar-width: 240px;
+$sidebar-collapsed-width: 72px;
+
+
 .sidebar {
-    width: 240px;
+    width: $sidebar-width;
     height: 100vh;
-    background: #ffffff;
-    border-right: 1px solid #e5e7eb;
+    background: $bg;
+    border-right: 1px solid $border-col;
     display: flex;
     flex-direction: column;
     transition: width 300ms ease;
     overflow: hidden;
     flex-shrink: 0;
+
+    &.collapsed {
+        width: $sidebar-collapsed-width;
+
+        .header-logo,
+        .nav-label,
+        .nav-group-title,
+        .logout-text {
+            display: none;
+        }
+
+        .header {
+            padding: 16px;
+            justify-content: center;
+        }
+
+        .nav-group {
+            padding: 0 8px;
+            margin-bottom: 8px;
+        }
+
+        .nav-item {
+            justify-content: center;
+            padding: 8px;
+        }
+    }
 }
 
-.collapsed {
-    width: 72px;
-}
-
-.collapsed .header-logo-text,
-.collapsed .header-logo,
-.collapsed .nav-group-title .collapsed .label {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.collapsed .nav-item {
-    justify-content: center;
-    padding: 8px;
-}
-
-.collapsed .header {
-    padding: 16px;
-    justify-content: center;
-}
-
-.collapsed .group {
-    padding: 0 8px;
-}
 
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 24px 16px;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid $border-col;
 }
 
 .header-logo {
@@ -57,7 +65,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    color: $bg;
     font-weight: 700;
     font-size: 12px;
 }
@@ -111,6 +119,7 @@
 .nav-group {
     padding: 0 16px;
     margin-bottom: 24px;
+    // border-bottom: 1px solid $border-col;
 }
 
 .nav-group-title {
@@ -163,7 +172,7 @@
 
 .footer {
     padding: 16px;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid $border-col;
 }
 
 .logout {
@@ -186,4 +195,8 @@
 .logout:hover {
     background: #f3f4f6;
     color: #ef4444;
+}
+
+.logout svg {
+    flex-shrink: 0;
 }
