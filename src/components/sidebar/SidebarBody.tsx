@@ -1,13 +1,36 @@
-import { Link } from 'react-router'
+import { NavLink } from 'react-router'
 import type { SidebarNavGroup } from "../../types/sidebar"
-import { LayoutDashboard } from 'lucide-react'
+import { ChartArea, ClipboardType, Columns3Cog, File, House, MessageCircleQuestionMark, Search, Settings, Users, Workflow, type LucideIcon } from 'lucide-react'
 export const navGroups: SidebarNavGroup[] = [
     {
         title: 'Main',
         items: [
-            { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard as any, path: '/' }
+            { id: 'dashboard', label: 'Dashboard', icon: House, path: '/' },
+            { id: 'cases', label: 'Cases', icon: File, path: '/cases' },
+            { id: 'legal-search', label: 'Legal Search', icon: Search, path: '/legal-search' },
+            { id: 'smart-review', label: 'Smart Review', icon: Columns3Cog, path: '/smart-review' }
         ]
-    }
+    },
+    {
+        title: 'Analytics',
+        items: [
+            { id: 'compliance-view', label: 'Compliance view', icon: ChartArea, path: '/compliance-view' },
+            { id: 'legal-forms', label: 'Legal Forms', icon: ClipboardType, path: '/legal-forms' },
+        ]
+    }, {
+        title: 'Management',
+        items: [
+            { id: 'team', label: 'Team', icon: Users, path: '/team' },
+            { id: 'integrations', label: 'Integrations', icon: Workflow, path: '/integrations' },
+        ]
+    }, {
+        title: 'Other',
+        items: [
+            { id: 'settings', label: 'Settings', icon: Settings, path: '/settings' },
+            { id: 'support-center', label: 'Support Center', icon: MessageCircleQuestionMark, path: '/support' },
+        ]
+    },
+
 ]
 export const SidebarBody = () => {
     return (
@@ -17,18 +40,17 @@ export const SidebarBody = () => {
                     <h3 className="group-title">{group.title}</h3>
                     <ul className="nav-list">
                         {group.items.map((item) => {
-                            const Icon = item.icon;
-                            const isActive = location.pathname === item.path;
+                            const Icon: LucideIcon = item.icon;
 
                             return (
                                 <li key={item.id}>
-                                    <Link
+                                    <NavLink
                                         to={item.path}
-                                        className={`nav-item ${isActive ? 'active' : ''}`}
+                                        className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
                                     >
                                         <Icon className="nav-icon" />
                                         <span className="nav-label">{item.label}</span>
-                                    </Link>
+                                    </NavLink>
                                 </li>
                             );
                         })}
