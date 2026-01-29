@@ -1,0 +1,16 @@
+import { Outlet } from "react-router"
+import { Sidebar } from "./sidebar/Sidebar"
+import { Header } from "./Header"
+
+export const AppLayout = () => {
+    return (
+        <div className="app-layout">
+            <Sidebar />
+            <div className="app-main">
+                <Header />
+                <main className="app-content">
+                    <Outlet />
+                </main>
+            </div>
+        </div>)
+}
