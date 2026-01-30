@@ -35,6 +35,28 @@ body {
     flex: 1;
 }
 
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    grid-template-rows: auto auto 1fr;
+    gap: 24px;
+    height: 100%;
+
+    .dashboard-left {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        grid-row: 1 / -1;
+    }
+
+    .dashboard-right {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
 .placeholder-page {
     display: flex;
     flex: 1;
