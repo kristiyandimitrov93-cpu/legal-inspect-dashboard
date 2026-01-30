@@ -1,4 +1,6 @@
 import { useGetRelevantCasesQuery } from "../api/relevantCasesApi"
+import { CasesTable } from "./CasesTable"
+import { Chart } from "./Chart"
 
 export const Dashboard = () => {
 
@@ -14,8 +16,8 @@ export const Dashboard = () => {
         </div>
         <div className="dashboard-right">
             <div>Summary</div>
-            <div>AI risk trent</div>
-            <div> Relevant cases</div>
+            <Chart></Chart>
+            <CasesTable />
         </div>
     </div>)
 }
