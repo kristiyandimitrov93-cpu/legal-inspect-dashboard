@@ -1,7 +1,7 @@
 import { MoreHorizontal } from 'lucide-react'
 import './CasesTable.scss'
-import type { RelevantCase } from '../types/relativeCasesApi'
-import { useGetRelevantCasesQuery } from '../api/relevantCasesApi'
+import type { RelevantCase } from '../../../types/relativeCasesApi'
+import { useGetRelevantCasesQuery } from '../../../api/relevantCasesApi'
 export const CasesTable = () => {
     const { data, error, isLoading } = useGetRelevantCasesQuery()
     debugger

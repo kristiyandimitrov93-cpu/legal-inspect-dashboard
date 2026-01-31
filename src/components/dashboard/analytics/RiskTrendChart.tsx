@@ -1,9 +1,11 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { RechartsDevtools } from '@recharts/devtools';
 import { useDispatch, useSelector } from 'react-redux';
-import { chartDataSelector, showDocumentsLineSelectpr, showRiskLineSelector, toggleDocumentsLine, toggleRisksLine } from '../state/analytics';
-import './Chart.scss'
-export const Chart = () => {
+import { chartDataSelector, showDocumentsLineSelectpr, showRiskLineSelector, toggleDocumentsLine, toggleRisksLine } from '../../../state/analytics';
+import './RiskTrendChart.scss'
+
+
+export const RiskTrendChart = () => {
     const chartDate = useSelector(chartDataSelector)
     const dispatch = useDispatch()
 
