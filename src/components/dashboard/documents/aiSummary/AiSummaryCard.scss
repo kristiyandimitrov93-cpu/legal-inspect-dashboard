@@ -95,6 +95,6 @@
 
 .ai-summary-divider {
     height: 1px;
-    background: rgba(15, 23, 42, 0.06);
-    margin: $spacing-sm 0;
+    background: $divider-color;
+    margin: $spacing-sm $spacing-zero;
 }

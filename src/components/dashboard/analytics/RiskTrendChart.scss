@@ -29,10 +29,10 @@
 
     .risk-filter {
         background: rgba(230, 74, 74, 0.1);
-        color: #E64A4A;
+        color: $color-danger;
 
         .active {
-            background: #E64A4A;
+            background: $color-danger-bg;
             color: white;
         }
     }

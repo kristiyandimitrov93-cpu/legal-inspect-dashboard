@@ -31,8 +31,8 @@
 
 .document-status-divider {
     height: 1px;
-    background: rgba(15, 23, 42, 0.06);
-    margin: $spacing-sm 0;
+    background: $divider-color;
+    margin: $spacing-sm $spacing-zero;
 }
 
 .document-status-progress-bar-box {
@@ -73,7 +73,7 @@
     color: $color-text-secondary;
     background: $color-bg-hover;
     display: inline-flex;
-    padding: $spacing-xs 8px;
+    padding: $spacing-xs $spacing-sm;
     border-radius: 999px;
     font-weight: $font-weight-semibold;
 }
