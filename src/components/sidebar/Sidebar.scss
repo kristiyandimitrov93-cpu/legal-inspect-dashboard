@@ -6,7 +6,7 @@ $sidebar-collapsed-width: 72px;
 
 .sidebar {
     width: $sidebar-width;
-    height: 100vh;
+    height: 100%;
     background: $bg;
     border-right: 1px solid $border-col;
     display: flex;

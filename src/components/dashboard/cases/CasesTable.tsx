@@ -3,6 +3,7 @@ import type { RelevantCase } from '../../../types/relativeCasesApi'
 import { useGetRelevantCasesQuery } from '../../../api/relevantCasesApi'
 import { Card, CardBody, CardHeader, CardTitle } from '../../card/Card'
 import { CardMenuButton } from '../../common/MoreActionBtn'
+
 export const CasesTable = () => {
     const { data, error, isLoading } = useGetRelevantCasesQuery()
     debugger
