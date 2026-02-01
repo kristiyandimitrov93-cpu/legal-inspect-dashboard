@@ -32,19 +32,19 @@ export const AiSummaryCard = ({
                             {riskLabel}
                         </span>
                     </div>
-                    <div className="divider" />
+                    <div className="ai-summary-divider" />
 
                     <div className="ai-summary-row">
                         <span className="ai-summary-label">Clause Type:</span>
                         <span className="ai-summary-value">{clauseType}</span>
                     </div>
-                    <div className="divider" />
+                    <div className="ai-summary-divider" />
 
                     <div className="ai-summary-row">
                         <span className="ai-summary-label">Impact:</span>
                         <span className="ai-summary-value">{impact}</span>
                     </div>
-                    <div className="divider" />
+                    <div className="ai-summary-divider" />
                 </div>
 
                 <div className="ai-summary-recommendation">
