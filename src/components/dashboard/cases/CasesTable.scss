@@ -20,6 +20,32 @@ th {
     white-space: nowrap;
 }
 
+.sortable {
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        color: #1A1D1F;
+    }
+}
+
+.sortable-header-name {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+
+    .sort-icon {
+        color: #9CA3AF;
+    }
+
+    .sort-icon-active {
+        color: #012dff;
+    }
+}
+
+
+
 td {
     padding: 8px 16px;
     font-size: 12px;
