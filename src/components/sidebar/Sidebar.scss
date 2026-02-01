@@ -1,13 +1,12 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
-
 .sidebar {
     @include flex-column;
     width: $sidebar-width;
     height: 100%;
-    background: $color-surface;
-    border-right: 1px solid $color-border-subtle;
+    background: $sidebar-bg;
+    border-right: 1px solid $sidebar-border;
     transition: width 300ms ease;
     overflow: hidden;
     flex-shrink: 0;
@@ -39,7 +38,6 @@
     }
 }
 
-
 .header {
     @include flex-between;
     padding: $spacing-lg $spacing-md;
@@ -55,9 +53,9 @@
     @include flex-center;
     width: 32px;
     height: 32px;
-    background: $color-text-primary;
     border-radius: 8px;
-    color: $color-surface;
+    background: rgba(255, 255, 255, 0.10);
+    color: rgba(255, 255, 255, 0.90);
     font-weight: $font-weight-bold;
     font-size: $font-size-sm;
 }
@@ -65,7 +63,7 @@
 .header-logo-text {
     font-size: $font-size-lg;
     font-weight: $font-weight-semibold;
-    color: $color-text-primary;
+    color: rgba(255, 255, 255, 0.90);
 }
 
 .header-toggle-btn {
@@ -78,14 +76,13 @@
     padding: 0;
     cursor: pointer;
     font-family: $font-family;
-    color: $color-text-secondary;
+    color: $sidebar-text-muted;
     transition: background-color 150ms ease;
 }
 
 .header-toggle-btn:hover {
-    background-color: $color-bg-hover;
+    background-color: $sidebar-hover;
 }
-
 
 .nav {
     flex: 1;
@@ -102,7 +99,7 @@
 }
 
 .nav::-webkit-scrollbar-thumb {
-    background: #d1d5db;
+    background: rgba(255, 255, 255, 0.18);
     border-radius: 9999px;
 }
 
@@ -114,7 +111,7 @@
 .nav-group-title {
     font-size: $font-size-xs;
     font-weight: $font-weight-semibold;
-    color: $color-text-secondary;
+    color: $sidebar-text-muted;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: $spacing-sm;
@@ -127,12 +124,13 @@
 }
 
 .nav-item {
+    position: relative;
     display: flex;
     align-items: center;
     gap: $spacing-sm;
     padding: $spacing-sm $spacing-md;
     border-radius: 8px;
-    color: $color-text-secondary;
+    color: $sidebar-text;
     font-size: $font-size-base;
     font-weight: $font-weight-medium;
     text-decoration: none;
@@ -140,13 +138,24 @@
 }
 
 .nav-item:hover {
-    background: $color-bg-hover;
-    color: $color-text-primary;
+    background: $sidebar-hover;
+    color: rgba(255, 255, 255, 0.95);
 }
 
-.active {
-    background: $color-bg-hover;
-    color: $color-text-primary;
+.nav-item.active {
+    background: $sidebar-active;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.nav-item.active::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    border-radius: 999px;
+    background: $color-brand;
 }
 
 .icon {
@@ -161,7 +170,7 @@
 
 .footer {
     padding: $spacing-md;
-    border-top: 1px solid $color-border-subtle;
+    border-top: 1px solid $sidebar-border;
 }
 
 .logout {
@@ -175,15 +184,15 @@
     border: none;
     cursor: pointer;
     font-family: $font-family;
-    color: $color-text-secondary;
+    color: $sidebar-text;
     font-size: $font-size-base;
     font-weight: $font-weight-medium;
     transition: background-color 150ms ease, color 150ms ease;
 }
 
 .logout:hover {
-    background: $color-bg-hover;
-    color: #ef4444;
+    background: $sidebar-hover;
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .logout svg {

@@ -2,8 +2,8 @@
 
 .summary-cards {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: $spacing-md;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     min-width: 0;
 }
 
@@ -13,7 +13,7 @@
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.08);
     border: 1px solid #E5E7EB;
     padding: $spacing-md $spacing-lg;
-    min-width: 180px;
+    min-width: 0px;
 
     transition: box-shadow 150ms ease, transform 150ms ease;
 
