@@ -1,0 +1,76 @@
+.document-status-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.document-status-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+.document-status-label {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.document-status-value {
+    font-size: 11px;
+    color: #111827;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.document-status-divider {
+    height: 1px;
+    background: rgba(15, 23, 42, 0.06);
+    margin: 8px 0;
+}
+
+.document-status-progress-bar-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.document-status-progress-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.document-status-progress-pct {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+.document-status-progress-bar {
+    height: 6px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    overflow: hidden;
+}
+
+.document-status-progress-fill {
+    height: 100%;
+    background: #10b981;
+    border-radius: 999px;
+}
+
+.document-status-stage {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #6f767e;
+    background: #f3f4f6;
+    display: inline-flex;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+}
