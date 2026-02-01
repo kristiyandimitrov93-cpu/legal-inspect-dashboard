@@ -1,8 +1,11 @@
 import { STYLES, type FileExt } from "../../../../types/documents";
 import { FileText } from "lucide-react";
 
+interface FileTypeIconProps {
+    ext: FileExt
+}
 
-export function FileTypeIcon({ ext }: { ext: FileExt }) {
+export const FileTypeIcon = ({ ext }: FileTypeIconProps) => {
     const { bgColor, color, label } = STYLES[ext];
 
     return (
