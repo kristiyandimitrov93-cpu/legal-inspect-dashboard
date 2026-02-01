@@ -49,8 +49,8 @@ export default documentsSlice.reducer;
 
 export const documentsStateSelector = (state: RootState) => state.documents;
 
-export const documentSelector = createSelector(documentsStateSelector, state => state.documents)
-export const latestDocumentSelector = createSelector(documentSelector, documents => {
+export const documentsSelector = createSelector(documentsStateSelector, state => state.documents)
+export const latestDocumentSelector = createSelector(documentsSelector, documents => {
     if (!documents || documents.length === 0) return null;
     return documents[0];
 })
