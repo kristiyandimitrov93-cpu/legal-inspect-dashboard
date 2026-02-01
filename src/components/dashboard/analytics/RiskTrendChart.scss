@@ -15,24 +15,33 @@
         cursor: pointer;
         transition: all 150ms ease;
         gap: $spacing-xs;
-        border: 1px solid transparent;
 
+        background: $color-surface;
+        border: 1px solid $color-divider;
+        color: $color-text-secondary;
 
-    }
-
-    .documents-filter {
-        background: rgba(54, 79, 199, 0.1);
-        color: #364FC7;
-    }
-
-    .risk-filter {
-        background: rgba(230, 74, 74, 0.1);
-        color: $color-danger;
-
-        .active {
-            background: $color-danger-bg;
-            color: white;
+        &:hover {
+            background: $color-bg-hover;
+            color: $color-text-primary;
         }
+
+        &:focus-visible {
+            outline: 2px solid rgba(54, 79, 199, 0.35);
+            outline-offset: 2px;
+        }
+
+    }
+
+    .documents-filter.active {
+        background: rgba(54, 79, 199, 0.10);
+        border-color: rgba(54, 79, 199, 0.35);
+        color: $color-brand;
+    }
+
+    .risk-filter.active {
+        background: $color-danger-bg;
+        border-color: rgba(239, 68, 68, 0.35);
+        color: $color-danger;
     }
 }
 
