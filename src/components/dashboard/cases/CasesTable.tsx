@@ -5,9 +5,15 @@ import { Card, CardBody, CardHeader, CardTitle } from '@/components/card/Card'
 import { CardMenuButton } from '@/components/common/MoreActionBtn'
 import { ArrowDown, ArrowUp, ArrowUpDown, MoreVertical } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import { CircleFlag } from 'react-circle-flags'
 
 export type SortColumn = 'caseName' | 'year' | 'relevance' | null;
 export type SortDirection = 'asc' | 'desc';
+const countryCodes: Record<string, string> = {
+    US: "us",
+    UK: "gb",
+    EU: "eu"
+};
 export const CasesTable = () => {
     const [sortColumn, setSortColumn] = useState<SortColumn>(null)
     const [sortDirection, setSortDirection] = useState<SortDirection>('asc')
@@ -78,6 +84,8 @@ export const CasesTable = () => {
             ? <ArrowUp size={14} className="sort-icon sort-icon-active" />
             : <ArrowDown size={14} className="sort-icon sort-icon-active" />;
     };
+
+
     return (
         <Card className="cases-table-card">
             <CardHeader actionBtn={<CardMenuButton />}>
@@ -114,18 +122,34 @@ export const CasesTable = () => {
                                         <span>{caseItem.caseName}</span>
                                     </td>
                                     <td>
-                                        <span>{caseItem.jurisdiction}</span>
+                                        <span className="jurisdiction">
+                                            <CircleFlag
+                                                countryCode={countryCodes[caseItem.jurisdiction] ?? "un"}
+                                                height="16"
+                                                aria-label={`${caseItem.jurisdiction} flag`}
+                                            />
+                                            <span className="jurisdiction-code">{caseItem.jurisdiction}</span>
+                                        </span>
                                     </td>
                                     <td>
                                         <span>{caseItem.year}</span>
                                     </td>
                                     <td>
-                                        <span>{caseItem.relevance}</span>
+                                        <div className="relevance-meter">
+                                            <div className="relevance-bar" aria-hidden="true">
+                                                <span className="relevance-fill" style={{ width: `${Math.round(caseItem.relevance * 100)}%` }} />
+                                            </div>
+                                            <span className="relevance-value">{Math.round(caseItem.relevance * 100)}</span>
+
+                                        </div>
                                     </td>
                                     <td>
                                         <span>{caseItem.clauseMatch}</span>
                                     </td>
-                                    <td><span>{caseItem.outcome}</span></td>
+                                    <td>
+                                        <span className={`outcome-cell outcome-cell-${caseItem.outcome.toLowerCase()}`}>
+                                            {caseItem.outcome}
+                                        </span></td>
 
 
                                     <td className="row-actions">

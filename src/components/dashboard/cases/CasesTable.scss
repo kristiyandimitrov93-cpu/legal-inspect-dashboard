@@ -137,3 +137,86 @@ tr:hover td {
         outline-offset: 2px;
     }
 }
+
+
+.outcome-cell {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 150ms ease;
+    gap: 4px;
+    border: 1px solid transparent;
+
+    text-transform: capitalize;
+
+    &-win {
+        background: $color-success-bg;
+        color: $color-success;
+    }
+
+    &-settled {
+        background: $color-warning-bg;
+        color: $color-warning;
+    }
+
+    &-loss {
+        background: $color-danger-bg;
+        color: $color-danger;
+    }
+
+    &-unknown {
+        background: $color-unknown-bg;
+        color: $color-unknown;
+    }
+
+}
+
+.relevance-meter {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    min-width: 120px;
+}
+
+.relevance-bar {
+    width: 72px;
+    height: 6px;
+    border-radius: 999px;
+    background: $color-bg-hover;
+    overflow: hidden;
+}
+
+.relevance-fill {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: #10b981;
+}
+
+.relevance-value {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    font-weight: $font-weight-semibold;
+    font-variant-numeric: tabular-nums;
+}
+
+.jurisdiction {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+}
+
+.jurisdiction-flag {
+    font-size: $font-size-base;
+    line-height: $line-height-tight;
+}
+
+.jurisdiction-code {
+    font-size: $font-size-sm;
+    color: $color-text-primary;
+    font-weight: $font-weight-medium;
+}
