@@ -1,6 +1,6 @@
 import './AiSummaryCard.scss'
-import { Card, CardHeader, CardTitle, CardBody, CardFooter } from "../../../card/Card";
-import { CardMenuButton } from "../../../common/MoreActionBtn";
+import { Card, CardHeader, CardTitle, CardBody, CardFooter } from "@/components/card/Card";
+import { CardMenuButton } from "@/components/common/MoreActionBtn";
 import { AlertTriangle } from 'lucide-react';
 
 

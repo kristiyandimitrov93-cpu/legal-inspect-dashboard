@@ -1,10 +1,10 @@
-import { Card, CardHeader, CardTitle, CardBody } from "../../../card/Card";
+import { Card, CardHeader, CardTitle, CardBody } from "@/components/card/Card";
 
 import "./DocumentStatusCard.scss";
-import { CardMenuButton } from "../../../common/MoreActionBtn";
+import { CardMenuButton } from "@/components/common/MoreActionBtn";
 import { useSelector } from "react-redux";
-import { latestDocumentSelector } from "../../../../state/documents";
-import { FileRow } from "../fileRow/FileRow";
+import { latestDocumentSelector } from "@/state/documents";
+import { FileRow } from "@/components/dashboard/documents/fileRow/FileRow";
 
 
 

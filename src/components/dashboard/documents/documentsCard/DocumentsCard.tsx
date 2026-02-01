@@ -1,10 +1,10 @@
 import "./DocumentsCard.scss";
 import { ChevronDown } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardSubtitle, CardBody, CardFooter } from "../../../card/Card";
-import { CardMenuButton } from "../../../common/MoreActionBtn";
-import { FileRow } from "../fileRow/FileRow";
+import { Card, CardHeader, CardTitle, CardSubtitle, CardBody, CardFooter } from "@/components/card/Card";
+import { CardMenuButton } from "@/components/common/MoreActionBtn";
+import { FileRow } from "@/components/dashboard/documents/fileRow/FileRow";
 import { useSelector } from "react-redux";
-import { documentsSelector } from "../../../../state/documents";
+import { documentsSelector } from "@/state/documents";
 
 
 export interface DocumentCardProps {

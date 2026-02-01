@@ -1,9 +1,9 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { RechartsDevtools } from '@recharts/devtools';
 import { useDispatch, useSelector } from 'react-redux';
-import { chartDataSelector, showDocumentsLineSelectpr, showRiskLineSelector, toggleDocumentsLine, toggleRisksLine } from '../../../state/analytics';
+import { chartDataSelector, showDocumentsLineSelectpr, showRiskLineSelector, toggleDocumentsLine, toggleRisksLine } from '@/state/analytics';
 import './RiskTrendChart.scss'
-import { Card, CardBody, CardHeader, CardTitle } from '../../card/Card';
+import { Card, CardBody, CardHeader, CardTitle } from '@/components/card/Card';
 
 
 export const RiskTrendChart = () => {

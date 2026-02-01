@@ -1,6 +1,6 @@
 import { Download, Eye } from "lucide-react"
 import { FileTypeIcon } from "./FileTypeIcon"
-import type { DocumentFile } from "../../../../types/documents"
+import type { DocumentFile } from "@/types/documents"
 
 import './FileRow.scss'
 

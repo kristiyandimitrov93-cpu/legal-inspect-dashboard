@@ -1,8 +1,8 @@
 import './CasesTable.scss'
-import type { RelevantCase } from '../../../types/relativeCasesApi'
-import { useGetRelevantCasesQuery } from '../../../api/relevantCasesApi'
-import { Card, CardBody, CardHeader, CardTitle } from '../../card/Card'
-import { CardMenuButton } from '../../common/MoreActionBtn'
+import type { RelevantCase } from '@/types/relativeCasesApi'
+import { useGetRelevantCasesQuery } from '@/api/relevantCasesApi'
+import { Card, CardBody, CardHeader, CardTitle } from '@/components/card/Card'
+import { CardMenuButton } from '@/components/common/MoreActionBtn'
 import { ArrowDown, ArrowUp, ArrowUpDown } from 'lucide-react'
 import { useState } from 'react'
 

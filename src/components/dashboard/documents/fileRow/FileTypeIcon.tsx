@@ -1,4 +1,4 @@
-import { STYLES, type FileExt } from "../../../../types/documents";
+import { STYLES, type FileExt } from "@/types/documents";
 import { FileText } from "lucide-react";
 
 interface FileTypeIconProps {

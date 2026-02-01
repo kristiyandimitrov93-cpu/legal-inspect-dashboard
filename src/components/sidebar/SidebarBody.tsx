@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router'
-import { SIDEBAR_NAV_GROUPS } from '../../constants/sidebar';
+import { SIDEBAR_NAV_GROUPS } from '@/constants/sidebar';
 import type { LucideIcon } from 'lucide-react';
 
 export const SidebarBody = () => {
