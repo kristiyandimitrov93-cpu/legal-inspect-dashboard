@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router'
-import { AppLayout } from './components/AppLayout'
-import { Dashboard } from './components/Dashboard'
-import { PlaceholderPage } from './components/PlaceholderPage'
+import { AppLayout } from '@/components/AppLayout'
+import { Dashboard } from '@/components/Dashboard'
+import { PlaceholderPage } from '@/components/PlaceholderPage'
 
-import './styles/index.scss';
+import '@/styles/globals.scss';
 
 export const App = () => {
   return (

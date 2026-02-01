@@ -6,6 +6,7 @@ import { CardMenuButton } from '@/components/common/MoreActionBtn'
 import { ArrowDown, ArrowUp, ArrowUpDown, MoreVertical } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { CircleFlag } from 'react-circle-flags'
+import clsx from 'clsx'
 
 export type SortColumn = 'caseName' | 'year' | 'relevance' | null;
 export type SortDirection = 'asc' | 'desc';
@@ -147,8 +148,12 @@ export const CasesTable = () => {
                                         <span>{caseItem.clauseMatch}</span>
                                     </td>
                                     <td>
-                                        <span className={`outcome-cell outcome-cell-${caseItem.outcome.toLowerCase()}`}>
-                                            {caseItem.outcome}
+                                        <span
+                                            className={clsx(
+                                                "outcome-cell",
+                                                `outcome-cell-${caseItem.outcome.toLowerCase()}`
+                                            )}
+                                        >    {caseItem.outcome}
                                         </span></td>
 
 

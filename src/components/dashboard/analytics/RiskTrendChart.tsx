@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { chartDataSelector, showDocumentsLineSelectpr, showRiskLineSelector, toggleDocumentsLine, toggleRisksLine } from '@/state/analytics';
 import './RiskTrendChart.scss'
 import { Card, CardBody, CardHeader, CardTitle } from '@/components/card/Card';
+import clsx from 'clsx';
 
 
 export const RiskTrendChart = () => {
@@ -18,13 +19,13 @@ export const RiskTrendChart = () => {
             <CardHeader actionBtn={
                 <div className="chart-card-filters">
                     <button
-                        className={`filter documents-filter ${showDocumentsLine ? 'active' : ''}`}
+                        className={clsx("filter", "documents-filter", showDocumentsLine && "active")}
                         onClick={() => dispatch(toggleDocumentsLine())}
                     >
                         Documents analyzed
                     </button>
                     <button
-                        className={` filter risk-filter ${showRisksLine ? 'active' : ''}`}
+                        className={clsx("filter", "risk-filter", showRisksLine && "active")}
                         onClick={() => dispatch(toggleRisksLine())}
                     >
                         With risks

@@ -1,6 +1,6 @@
 import './Card.scss'
 import clsx from "clsx";
-import type { HTMLAttributes } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 
 
 type DivProps = HTMLAttributes<HTMLDivElement>;
@@ -9,12 +9,17 @@ export function Card({ className, ...props }: DivProps) {
     return <section className={clsx("card", className)} {...props} />;
 }
 
+
+export interface CardHeaderProps extends HTMLAttributes<HTMLElement> {
+    actionBtn?: ReactNode;
+    children: ReactNode;
+}
 export function CardHeader({
     className,
     actionBtn,
     children,
     ...props
-}: any) {
+}: CardHeaderProps) {
     return (
         <header className={clsx("card-header", className)} {...props}>
             <div className="card-header-title">{children}</div>

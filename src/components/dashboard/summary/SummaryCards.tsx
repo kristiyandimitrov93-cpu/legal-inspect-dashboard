@@ -1,5 +1,6 @@
 import { CircleChevronDown, CircleChevronUp } from 'lucide-react';
 import './SummaryCards.scss';
+import clsx from 'clsx';
 
 type ChangeType = 'positive' | 'negative' | 'neutral';
 
@@ -18,7 +19,12 @@ export const SummaryCards = () => {
                     <p className="summary-card-label">{summary.label}</p>
                     <div className='summary-card-details'>
                         <div className="summary-card-value">{summary.value}</div>
-                        <div className={`summary-card-change change-type-${summary.changeType}`}>
+                        <div
+                            className={clsx(
+                                "summary-card-change",
+                                `change-type-${summary.changeType}`
+                            )}
+                        >
                             {summary.changeType === 'positive' && <CircleChevronUp size={16} />}
                             {summary.changeType === 'negative' && <CircleChevronDown size={16} />}
                             {summary.change}
