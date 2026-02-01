@@ -1,0 +1,19 @@
+.documents-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.documents-show-all {
+    margin-top: 10px;
+    background: transparent;
+    border: none;
+    padding: 8px 0;
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
