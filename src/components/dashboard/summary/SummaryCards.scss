@@ -15,6 +15,13 @@
     padding: $spacing-md $spacing-lg;
     min-width: 180px;
 
+    transition: box-shadow 150ms ease, transform 150ms ease;
+
+    &:hover {
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+        transform: translateY(-1px);
+    }
+
     .summary-card-label {
         font-size: $font-size-xs;
         color: $color-text-secondary;
@@ -29,7 +36,7 @@
 
     .summary-card-value {
         font-size: $font-size-metric;
-        font-weight: $font-weight-medium;
+        font-weight: $font-weight-bold;
         line-height: $line-height-tight;
         color: $color-text-primary;
     }

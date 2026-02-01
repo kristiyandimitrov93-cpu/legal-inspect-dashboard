@@ -1,24 +1,23 @@
-$color-text-primary: #111827;
+$color-dark: #111827;
+$color-text-primary: $color-dark;
 $color-text-secondary: #6f767e;
 $color-text-muted: #9ca3af;
 $color-text-subtle: #4b5563;
-$color-light-primary: #ffffff;
 
 // sidebar 
-$sidebar-border-col: #e5e7eb;
 $sidebar-width: 240px;
 $sidebar-collapsed-width: 72px;
 
 // backgrouns colors
-$color-surface: $color-light-primary;
+$color-surface: #ffffff;
+$color-border-subtle: #e5e7eb;
 $color-bg: #f1f5f9;
 $color-bg-hover: #f3f4f6;
 $color-brand: #364FC7;
-$divider-color: rgba(15, 23, 42, 0.06);
+$color-divider: rgba(15, 23, 42, 0.06);
 
-$bg-color-dark: $color-text-primary;
-$bg-color-light: $color-light-primary;
-$btn-primary-bg: $color-text-primary;
+$bg-color-dark: $color-dark;
+$btn-primary-bg: $color-dark;
 
 $color-success: #22c55e;
 $color-warning: #eab308;

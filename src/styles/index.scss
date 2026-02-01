@@ -18,7 +18,7 @@ body {
     font-family: $font-family;
     font-size: $font-size-lg;
     color: $color-text-primary;
-    background-color: $bg-color-light;
+    background-color: $color-surface;
     line-height: $line-height-relaxed;
 }
 
@@ -46,6 +46,7 @@ body {
     flex: 1 1 auto;
     min-height: 0;
     overflow: auto;
+    padding: $spacing-md $spacing-lg;
 }
 
 .app-content>* {

@@ -3,16 +3,44 @@ import type { RelevantCase } from '@/types/relativeCasesApi'
 import { useGetRelevantCasesQuery } from '@/api/relevantCasesApi'
 import { Card, CardBody, CardHeader, CardTitle } from '@/components/card/Card'
 import { CardMenuButton } from '@/components/common/MoreActionBtn'
-import { ArrowDown, ArrowUp, ArrowUpDown } from 'lucide-react'
-import { useState } from 'react'
+import { ArrowDown, ArrowUp, ArrowUpDown, MoreVertical } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 
 export type SortColumn = 'caseName' | 'year' | 'relevance' | null;
 export type SortDirection = 'asc' | 'desc';
 export const CasesTable = () => {
     const [sortColumn, setSortColumn] = useState<SortColumn>(null)
     const [sortDirection, setSortDirection] = useState<SortDirection>('asc')
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const dropdownRef = useRef<HTMLDivElement>(null);
     const { data, isLoading } = useGetRelevantCasesQuery()
 
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setOpenDropdown(null);
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+
+    const [dropUp, setDropUp] = useState(false);
+
+    const toggleDropdown = (e: React.MouseEvent, rowId: string) => {
+        const btn = e.currentTarget as HTMLElement;
+        if (openDropdown === rowId) {
+            setOpenDropdown(null);
+            return;
+        }
+        const rect = btn.getBoundingClientRect();
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const estimatedMenuHeight = 160;
+        setDropUp(spaceBelow < estimatedMenuHeight);
+        setOpenDropdown(rowId);
+    }
     if (isLoading) {
         return <div>Loading</div>
     }
@@ -76,6 +104,7 @@ export const CasesTable = () => {
                                     </span></th>
                                 <th>Clause Match</th>
                                 <th>Outcome</th>
+                                <th className="actions-col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -97,13 +126,37 @@ export const CasesTable = () => {
                                         <span>{caseItem.clauseMatch}</span>
                                     </td>
                                     <td><span>{caseItem.outcome}</span></td>
-                                </tr>)
+
+
+                                    <td className="row-actions">
+                                        <div ref={openDropdown === caseItem.id ? dropdownRef : null} style={{ position: 'relative' }}>
+                                            <button
+                                                className="row-actions-btn"
+                                                onClick={(e) => toggleDropdown(e, caseItem.id)}
+                                                aria-label="More actions"
+                                            >
+                                                <MoreVertical size={16} />
+                                            </button>
+                                            {openDropdown === caseItem.id && (
+                                                <div className={`actions-dropdown ${dropUp ? "is-up" : ""}`}>
+                                                    <button className="dropdown-item" onClick={() => setOpenDropdown(null)}>
+                                                        View Details
+                                                    </button>
+                                                    <button className="dropdown-item" onClick={() => setOpenDropdown(null)}>
+                                                        Download Report
+                                                    </button>
+                                                    <button className="dropdown-item" onClick={() => setOpenDropdown(null)}>
+                                                        Add to Comparison
+                                                    </button>
+                                                </div>
+                                            )}
+                                        </div> </td></tr>)
                             })}
                         </tbody>
                     </table>
                 </div>
             </CardBody>
 
-        </Card>
+        </Card >
     )
 }

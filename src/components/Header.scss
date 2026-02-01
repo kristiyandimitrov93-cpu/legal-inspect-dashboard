@@ -3,7 +3,7 @@
 
 .app-header {
     @include flex-between;
-    padding: $spacing-lg $spacing-md 12px $spacing-md;
+    padding: $spacing-md $spacing-lg;
     border-bottom: 1px solid #e5e7eb;
 
     .left {
