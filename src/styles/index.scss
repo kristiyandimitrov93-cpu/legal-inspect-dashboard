@@ -1,5 +1,6 @@
 @use '@/styles/variables' as *;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+@use '@/styles/mixins' as *;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400,500,600,700&display=swap');
 
 html,
 body,
@@ -14,7 +15,7 @@ html {
 body {
     margin: 0;
     overflow: hidden;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: $font-family;
     font-size: $font-size-lg;
     color: $color-text-primary;
     background-color: $bg-color-light;
@@ -71,10 +72,8 @@ body {
 
 
 .placeholder-page {
-    display: flex;
+    @include flex-center;
     flex: 1;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: $spacing-md;
 }

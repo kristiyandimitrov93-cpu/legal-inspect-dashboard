@@ -1,5 +1,5 @@
 @use '@/styles/variables' as *;
-
+@use '@/styles/mixins' as *;
 
 .card {
     background: $color-surface;
@@ -10,15 +10,12 @@
 }
 
 .card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-between;
     gap: $spacing-sm;
 }
 
 .card-header-title {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: $spacing-xxs;
     min-width: 0;
 }
@@ -30,16 +27,10 @@
     flex-shrink: 0;
 
     .icon-btn {
-        width: 34px;
-        height: 34px;
+        @include inline-icon-button(34px);
         border-radius: 10px;
         border: none;
         background: transparent;
-
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-
         color: $color-text-muted;
         cursor: pointer;
     }

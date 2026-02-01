@@ -1,4 +1,5 @@
 @use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
 
 .file-row {
     display: flex;
@@ -16,10 +17,9 @@
 }
 
 .file-meta {
+    @include flex-column;
     flex: 1;
     min-width: 0;
-    display: flex;
-    flex-direction: column;
     gap: $spacing-xxs;
 }
 
@@ -47,16 +47,10 @@
 }
 
 .icon-btn {
-    width: 30px;
-    height: 30px;
+    @include inline-icon-button(30px);
     border-radius: 10px;
     border: none;
     background: transparent;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
     color: $color-text-muted;
     cursor: pointer;
 }
@@ -85,14 +79,8 @@
 
 
 .file-type-icon {
-    width: 34px;
-    height: 34px;
+    @include inline-icon-button(34px);
     border-radius: 10px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
     position: relative;
     flex-shrink: 0;
 }

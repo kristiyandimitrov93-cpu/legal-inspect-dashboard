@@ -2,9 +2,12 @@ $color-text-primary: #111827;
 $color-text-secondary: #6f767e;
 $color-text-muted: #9ca3af;
 $color-text-subtle: #4b5563;
-
 $color-light-primary: #ffffff;
 
+// sidebar 
+$sidebar-border-col: #e5e7eb;
+$sidebar-width: 240px;
+$sidebar-collapsed-width: 72px;
 
 // backgrouns colors
 $color-surface: $color-light-primary;
@@ -25,7 +28,7 @@ $color-success-bg: rgba(34, 197, 94, 0.10);
 $color-warning-bg: rgba(234, 179, 8, 0.10);
 $color-danger-bg: rgba(239, 68, 68, 0.10);
 
-
+$font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 $font-size-xs: 10px;
 $font-size-sm: 12px;
 $font-size-base: 14px;

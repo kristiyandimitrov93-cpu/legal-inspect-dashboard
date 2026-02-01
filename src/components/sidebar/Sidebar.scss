@@ -1,17 +1,13 @@
-$border-col: #e5e7eb;
-$sidebar-width: 240px;
-$sidebar-collapsed-width: 72px;
-
 @use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
 
 
 .sidebar {
+    @include flex-column;
     width: $sidebar-width;
     height: 100%;
     background: $color-surface;
-    border-right: 1px solid $border-col;
-    display: flex;
-    flex-direction: column;
+    border-right: 1px solid $sidebar-border-col;
     transition: width 300ms ease;
     overflow: hidden;
     flex-shrink: 0;
@@ -45,11 +41,9 @@ $sidebar-collapsed-width: 72px;
 
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-between;
     padding: $spacing-lg $spacing-md;
-    border-bottom: 1px solid $border-col;
+    border-bottom: 1px solid $sidebar-border-col;
 }
 
 .header-logo {
@@ -59,9 +53,7 @@ $sidebar-collapsed-width: 72px;
 }
 
 .header-logo-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     width: 32px;
     height: 32px;
     background: $color-text-primary;
@@ -78,6 +70,7 @@ $sidebar-collapsed-width: 72px;
 }
 
 .header-toggle-btn {
+    @include flex-center;
     width: 28px;
     height: 28px;
     border-radius: 8px;
@@ -85,10 +78,7 @@ $sidebar-collapsed-width: 72px;
     border: none;
     padding: 0;
     cursor: pointer;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-family: $font-family;
     color: $color-text-secondary;
     transition: background-color 150ms ease;
 }
@@ -172,7 +162,7 @@ $sidebar-collapsed-width: 72px;
 
 .footer {
     padding: $spacing-md;
-    border-top: 1px solid $border-col;
+    border-top: 1px solid $sidebar-border-col;
 }
 
 .logout {
@@ -185,7 +175,7 @@ $sidebar-collapsed-width: 72px;
     background: none;
     border: none;
     cursor: pointer;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: $font-family;
     color: $color-text-secondary;
     font-size: $font-size-base;
     font-weight: $font-weight-medium;

@@ -1,8 +1,8 @@
 @use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
 
 .documents-list {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: 10px;
 }
 

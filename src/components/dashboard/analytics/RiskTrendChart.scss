@@ -1,9 +1,8 @@
 @use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
 
 .chart-card-filters {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    @include flex-start;
     gap: $spacing-sm;
 
     .filter {
@@ -13,7 +12,6 @@
         border-radius: 9999px;
         font-size: $font-size-xs;
         font-weight: $font-weight-medium;
-        ;
         cursor: pointer;
         transition: all 150ms ease;
         gap: $spacing-xs;

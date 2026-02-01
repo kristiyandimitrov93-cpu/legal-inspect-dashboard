@@ -1,22 +1,17 @@
 @use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
 
 .app-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-between;
     padding: $spacing-lg $spacing-md 12px $spacing-md;
     border-bottom: 1px solid #e5e7eb;
 
     .left {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        @include flex-start
     }
 
     .right {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        @include flex-start;
 
         .header-icon {
             padding: $spacing-sm $spacing-md;

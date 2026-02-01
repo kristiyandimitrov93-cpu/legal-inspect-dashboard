@@ -1,17 +1,15 @@
 @use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
 
 .ai-summary-rows {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: $spacing-sm;
     margin-bottom: 10px;
 }
 
 .ai-summary-row {
-    display: flex;
-    justify-content: space-between;
+    @include flex-between;
     gap: 10px;
-    align-items: center;
 }
 
 .ai-summary-label {

@@ -1,18 +1,16 @@
 @use '@/styles/variables' as *;
-
+@use '@/styles/mixins' as *;
 
 .document-status-rows {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: $spacing-sm;
     margin-top: $spacing-xxs;
 }
 
 .document-status-row {
-    display: flex;
-    justify-content: space-between;
+    @include flex-between;
     gap: 10px;
-    align-items: center;
+
 }
 
 .document-status-label {
@@ -36,9 +34,7 @@
 }
 
 .document-status-progress-bar-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-between;
     margin-bottom: $spacing-sm;
 }
 
