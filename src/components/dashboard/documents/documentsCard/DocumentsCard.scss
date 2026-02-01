@@ -1,3 +1,5 @@
+@use '@/styles/variables' as *;
+
 .documents-list {
     display: flex;
     flex-direction: column;
@@ -8,10 +10,10 @@
     margin-top: 10px;
     background: transparent;
     border: none;
-    padding: 8px 0;
-    color: #2563eb;
-    font-weight: 600;
-    font-size: 12px;
+    padding: $spacing-sm $spacing-zero;
+    color: $color-brand;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
     display: inline-flex;
     align-items: center;
     gap: 6px;

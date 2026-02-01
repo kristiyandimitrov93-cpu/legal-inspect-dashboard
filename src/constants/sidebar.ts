@@ -1,5 +1,5 @@
 import type { SidebarNavGroup } from "../types/sidebar"
-import { ChartArea, ClipboardType, Columns3Cog, File, House, MessageCircleQuestionMark, Search, Settings, Users, Workflow, type LucideIcon } from 'lucide-react'
+import { ChartArea, ClipboardType, Columns3Cog, File, House, MessageCircleQuestionMark, Search, Settings, Users, Workflow } from 'lucide-react'
 
 export const SIDEBAR_NAV_GROUPS: SidebarNavGroup[] = [
     {

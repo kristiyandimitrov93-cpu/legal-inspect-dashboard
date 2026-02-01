@@ -1,3 +1,5 @@
+@use '@/styles/variables' as *;
+
 .cases-table-container {
     flex: 1;
     overflow-x: auto;
@@ -10,10 +12,10 @@ table {
 
 th {
     text-align: left;
-    padding: 8px 16px;
-    font-size: 11px;
-    font-weight: 600;
-    color: #6F767E;
+    padding: $spacing-md $spacing-md;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    color: $color-text-secondary;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border-bottom: 1px solid #E5E7EB;
@@ -25,7 +27,7 @@ th {
     user-select: none;
 
     &:hover {
-        color: #1A1D1F;
+        color: $color-text-primary;
     }
 }
 
@@ -33,23 +35,23 @@ th {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 4px;
+    gap: $spacing-xs;
 
     .sort-icon {
-        color: #9CA3AF;
+        color: $color-text-muted;
     }
 
     .sort-icon-active {
-        color: #012dff;
+        color: $color-brand;
     }
 }
 
 
 
 td {
-    padding: 8px 16px;
-    font-size: 12px;
-    color: #1A1D1F;
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+    color: $color-text-primary;
     border-bottom: 1px solid #E5E7EB;
     white-space: nowrap;
 }

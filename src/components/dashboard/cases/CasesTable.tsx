@@ -11,7 +11,7 @@ export type SortDirection = 'asc' | 'desc';
 export const CasesTable = () => {
     const [sortColumn, setSortColumn] = useState<SortColumn>(null)
     const [sortDirection, setSortDirection] = useState<SortDirection>('asc')
-    const { data, error, isLoading } = useGetRelevantCasesQuery()
+    const { data, isLoading } = useGetRelevantCasesQuery()
 
     if (isLoading) {
         return <div>Loading</div>

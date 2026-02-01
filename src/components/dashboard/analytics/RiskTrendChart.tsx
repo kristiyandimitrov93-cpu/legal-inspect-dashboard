@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { RechartsDevtools } from '@recharts/devtools';
 import { useDispatch, useSelector } from 'react-redux';
 import { chartDataSelector, showDocumentsLineSelectpr, showRiskLineSelector, toggleDocumentsLine, toggleRisksLine } from '../../../state/analytics';

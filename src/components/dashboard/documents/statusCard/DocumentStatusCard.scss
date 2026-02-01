@@ -1,8 +1,11 @@
+@use '@/styles/variables' as *;
+
+
 .document-status-rows {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-top: 2px;
+    gap: $spacing-sm;
+    margin-top: $spacing-xxs;
 }
 
 .document-status-row {
@@ -13,48 +16,48 @@
 }
 
 .document-status-label {
-    font-size: 11px;
-    color: #9ca3af;
-    font-weight: 600;
-    line-height: 1.2;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-snug;
 }
 
 .document-status-value {
-    font-size: 11px;
-    color: #111827;
-    font-weight: 600;
-    line-height: 1.2;
+    font-size: $font-size-xs;
+    color: $color-text-primary;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-snug;
 }
 
 .document-status-divider {
     height: 1px;
     background: rgba(15, 23, 42, 0.06);
-    margin: 8px 0;
+    margin: $spacing-sm 0;
 }
 
 .document-status-progress-bar-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: $spacing-sm;
 }
 
 .document-status-progress-title {
-    font-size: 12px;
-    font-weight: 600;
-    color: #111827;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
 }
 
 .document-status-progress-pct {
-    font-size: 11px;
-    color: #9ca3af;
-    font-weight: 600;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    font-weight: $font-weight-semibold;
 }
 
 .document-status-progress-bar {
     height: 6px;
     border-radius: 999px;
-    background: #f3f4f6;
+    background: $color-bg-hover;
     overflow: hidden;
 }
 
@@ -66,11 +69,11 @@
 
 .document-status-stage {
     margin-top: 10px;
-    font-size: 11px;
-    color: #6f767e;
-    background: #f3f4f6;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    background: $color-bg-hover;
     display: inline-flex;
-    padding: 4px 8px;
+    padding: $spacing-xs 8px;
     border-radius: 999px;
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
 }

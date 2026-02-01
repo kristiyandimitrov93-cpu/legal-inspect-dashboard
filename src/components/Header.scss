@@ -1,8 +1,10 @@
+@use '@/styles/variables' as *;
+
 .app-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 16px 12px 16px;
+    padding: $spacing-lg $spacing-md 12px $spacing-md;
     border-bottom: 1px solid #e5e7eb;
 
     .left {
@@ -17,15 +19,15 @@
         justify-content: flex-start;
 
         .header-icon {
-            padding: 8px 16px;
+            padding: $spacing-sm $spacing-md;
         }
     }
 }
 
 .header-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1a1d1f;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
 }
 
 .search-input {
@@ -33,10 +35,10 @@
 
     input {
         width: 240px;
-        padding: 8px 16px 8px 36px;
+        padding: $spacing-sm $spacing-md $spacing-sm 36px;
         border: 1px solid #e5e7eb;
         border-radius: 8px;
-        font-size: 12px;
+        font-size: $font-size-sm;
         background: #F8F9FC;
         transition: border-color 150ms ease, box-shadow 150ms ease;
 

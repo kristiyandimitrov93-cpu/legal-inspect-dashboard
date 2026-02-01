@@ -1,20 +1,22 @@
+@use '@/styles/variables' as *;
+
 .summary-cards {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
+    gap: $spacing-md;
     min-width: 0;
 }
 
 .summary-card {
-    background: #FFFFFF;
+    background: $color-surface;
     border-radius: 12px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.08);
     border: 1px solid #E5E7EB;
-    padding: 16px 24px;
+    padding: $spacing-md $spacing-lg;
 
     .summary-card-label {
-        font-size: 11px;
-        color: #6F767E;
+        font-size: $font-size-xs;
+        color: $color-text-secondary;
         margin-bottom: 4px;
 
     }
@@ -22,35 +24,35 @@
     .summary-card-details {
         display: flex;
         align-items: baseline;
-        gap: 8px;
+        gap: $spacing-sm;
     }
 
     .summary-card-value {
-        font-size: 36px;
-        font-weight: 500;
-        line-height: 1;
-        color: #0f172a;
+        font-size: $font-size-metric;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-tight;
+        color: $color-text-primary;
     }
 
     .summary-card-change {
 
         display: inline-flex;
         align-items: center;
-        gap: 4px;
-        font-size: 12px;
-        font-weight: 600;
+        gap: $spacing-xs;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-semibold;
 
 
         &.change-type-positive {
-            color: #22C55E;
+            color: $color-success;
         }
 
         &.change-type-negative {
-            color: #EF4444;
+            color: $color-danger;
         }
 
         &.change-type-neutral {
-            color: #EAB308;
+            color: $color-warning;
         }
     }
 

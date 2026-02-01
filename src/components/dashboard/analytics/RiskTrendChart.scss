@@ -1,19 +1,22 @@
+@use '@/styles/variables' as *;
+
 .chart-card-filters {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 8px;
+    gap: $spacing-sm;
 
     .filter {
         display: inline-flex;
         align-items: center;
-        padding: 4px 8px;
+        padding: $spacing-xs $spacing-sm;
         border-radius: 9999px;
-        font-size: 11px;
-        font-weight: 500;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-medium;
+        ;
         cursor: pointer;
         transition: all 150ms ease;
-        gap: 4px;
+        gap: $spacing-xs;
         border: 1px solid transparent;
 
 

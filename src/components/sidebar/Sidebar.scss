@@ -1,13 +1,14 @@
-$bg: #ffffff;
 $border-col: #e5e7eb;
 $sidebar-width: 240px;
 $sidebar-collapsed-width: 72px;
+
+@use '@/styles/variables' as *;
 
 
 .sidebar {
     width: $sidebar-width;
     height: 100%;
-    background: $bg;
+    background: $color-surface;
     border-right: 1px solid $border-col;
     display: flex;
     flex-direction: column;
@@ -26,18 +27,18 @@ $sidebar-collapsed-width: 72px;
         }
 
         .header {
-            padding: 16px;
+            padding: $spacing-md;
             justify-content: center;
         }
 
         .nav-group {
-            padding: 0 8px;
-            margin-bottom: 8px;
+            padding: 0 $spacing-sm;
+            margin-bottom: $spacing-sm;
         }
 
         .nav-item {
             justify-content: center;
-            padding: 8px;
+            padding: $spacing-sm;
         }
     }
 }
@@ -47,33 +48,33 @@ $sidebar-collapsed-width: 72px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 16px;
+    padding: $spacing-lg $spacing-md;
     border-bottom: 1px solid $border-col;
 }
 
 .header-logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: $spacing-sm;
 }
 
 .header-logo-icon {
-    width: 32px;
-    height: 32px;
-    background: #111827;
-    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $bg;
-    font-weight: 700;
-    font-size: 12px;
+    width: 32px;
+    height: 32px;
+    background: $color-text-primary;
+    border-radius: 8px;
+    color: $color-light-primary;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-sm;
 }
 
 .header-logo-text {
-    font-size: 16px;
-    font-weight: 600;
-    color: #1a1d1f;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
 }
 
 .header-toggle-btn {
@@ -88,18 +89,18 @@ $sidebar-collapsed-width: 72px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #6f767e;
+    color: $color-text-secondary;
     transition: background-color 150ms ease;
 }
 
 .header-toggle-btn:hover {
-    background-color: #f3f4f6;
+    background-color: $color-bg-hover;
 }
 
 
 .nav {
     flex: 1;
-    padding: 16px 0;
+    padding: $spacing-md $spacing-zero;
     overflow-y: auto;
 }
 
@@ -117,18 +118,17 @@ $sidebar-collapsed-width: 72px;
 }
 
 .nav-group {
-    padding: 0 16px;
-    margin-bottom: 24px;
-    // border-bottom: 1px solid $border-col;
+    padding: $spacing-zero $spacing-md;
+    margin-bottom: $spacing-lg;
 }
 
 .nav-group-title {
-    font-size: 11px;
-    font-weight: 600;
-    color: #9ca3af;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    color: $color-text-muted;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 8px;
+    margin-bottom: $spacing-sm;
 }
 
 .nav-list {
@@ -140,24 +140,24 @@ $sidebar-collapsed-width: 72px;
 .nav-item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-md;
     border-radius: 8px;
-    color: #6f767e;
-    font-size: 14px;
-    font-weight: 500;
+    color: $color-text-secondary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
     text-decoration: none;
     transition: background-color 150ms ease, color 150ms ease;
 }
 
 .nav-item:hover {
-    background: #f3f4f6;
-    color: #1a1d1f;
+    background: $color-bg-hover;
+    color: $color-text-primary;
 }
 
 .active {
-    background: #f3f4f6;
-    color: #1a1d1f;
+    background: $color-bg-hover;
+    color: $color-text-primary;
 }
 
 .icon {
@@ -171,29 +171,29 @@ $sidebar-collapsed-width: 72px;
 }
 
 .footer {
-    padding: 16px;
+    padding: $spacing-md;
     border-top: 1px solid $border-col;
 }
 
 .logout {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: $spacing-sm;
     width: 100%;
-    padding: 8px 16px;
+    padding: $spacing-sm $spacing-md;
     border-radius: 8px;
     background: none;
     border: none;
     cursor: pointer;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: #6f767e;
-    font-size: 14px;
-    font-weight: 500;
+    color: $color-text-secondary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
     transition: background-color 150ms ease, color 150ms ease;
 }
 
 .logout:hover {
-    background: #f3f4f6;
+    background: $color-bg-hover;
     color: #ef4444;
 }
 
